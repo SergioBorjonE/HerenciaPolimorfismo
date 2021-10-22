@@ -1,6 +1,6 @@
 package com.generation.animales;
 
-public class Perro extends Animal{
+public class Perro extends Animal implements Mascota, Mamiferos{
     private int patas;
     private boolean cola;
     private String raza;
@@ -21,6 +21,8 @@ public class Perro extends Animal{
         super(nombre, edad);
     }
 
+    //Aca ya teneiamos jugar y el que se implemento de la interfaz
+    //esta sufriendo @override implicito
     public void jugar(){
         System.out.println("Estoy jugando");
     }
@@ -39,4 +41,31 @@ public class Perro extends Animal{
         System.out.println("Estoy respirando con mis pulmones");
     }
 
+    //Estos métodos vienen de la interfaz Mascota donde es absolutamente necesario que
+    //se definan todos
+    @Override
+    public void dormir() {
+        System.out.println("ZzZzZzZzZz");
+    }
+
+    @Override
+    public void hablar() {
+        System.out.println("Guaffff");
+    }
+
+    //Métodos de la interfaz Mamiferos
+    @Override
+    public void gestar() {
+        System.out.println("Tiempo de 2 meses");
+    }
+
+    @Override
+    public void ingestaLeche() {
+        System.out.println("Estoy consumiendo leche");
+    }
+
+    @Override
+    public void movilidad() {
+        System.out.println("Me desplaso por tierra");
+    }
 }
